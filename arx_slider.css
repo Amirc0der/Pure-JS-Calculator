@@ -1,70 +1,93 @@
-const timerlength = 5000 // Change it if you want to change the autoslide speed (in miliseconds, 10000 means 10 seconds) 
-const slider = document.querySelector(".slider");
-const sliderImg = slider.querySelectorAll("img");
-const sliderPreviusButton = slider.querySelector(".left")
-const sliderNextButton = slider.querySelector(".right")
-const slider_dots_holder = slider.querySelector(".slider_dots_holder")
-const sliderCount = slider.querySelectorAll("img").length - 1
+.container {
+  margin: 20px 0 0 0;
+}
+.slider * {
+  transition : all 0.4s ease 0s ;
+  user-select: none;
+}
+.slider {
+  background: #ddd;
+  margin: auto;
+  width: 80%;
+  height: 38vw;
+  overflow: hidden;
+  border-radius: 10px;
+  position: relative;
+}
+.slider img{
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+.slider_button {
+  font-family: tahoma;
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  padding: 10px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  background: rgba(255,255,255,0.5);
+  border-radius: 200px;
+  cursor: pointer;
+  top: 50%;
+  margin-top: -24px;
+}
+.slider_button:hover {
+  transform:  scale(1.1) rotate(360deg);
+  background-color: rgba(255,50,50,0.5);
+}
+.left {
+  left: 10px;
+}
+.left::after {
+  content: "<";
+}
+.right {
+  right: 10px;
+}
+.right::after {
+  content: ">";
+}
+.slider_dots_holder {
+  padding: 5px;
+  background: rgba(255,255,255,0.3);
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  border-radius: 10px;
+}
+.slider_dots_holder:hover {
+  background: rgba(255,255,255,0.5);
+}
+.slider_dots_holder:hover .slider_dots {
+  width: 20px;
+  height: 20px;
+}
+.slider_dots {
+  float: left;
+  margin: 5px;
+  background: #fff;
+  width: 10px;
+  height: 10px;
+  border-radius: 30px;
+  cursor: pointer;
+  opacity: 0.5;
+}
+.slider_dots:hover {
+  transform : scale(1.2);
+  opacity: 0.8;
+  background: #f55;
+}
 
-let currentSlider = 0;
-let dotsnum = sliderCount + 1;
-// CreateDots function creates clickable dots on the bottom of the slider based on the number of images
-function CreateDots () {
-	if ( dotsnum != 0 ) {
-		const newtag = document.createElement("div");
-		newtag.classList.add("slider_dots");
-		newtag.setAttribute("id", dotsnum)
-		newtag.setAttribute("onclick", ("sliderJump" + "(" + (sliderCount-(dotsnum-1)) + ")") )
-		slider_dots_holder.appendChild(newtag);
-		dotsnum--;
-		CreateDots()
-	}
-}
-CreateDots()
-const sliderdots =  slider.querySelectorAll(".slider_dots")
-function sliderShow () {
-	sliderImg[currentSlider].style.opacity = "1";
-	sliderdots[currentSlider].style.opacity = "1";
-}
-function sliderHide () {
-	sliderImg[currentSlider].style.opacity = "0";
-	sliderdots[currentSlider].style.opacity = "0.5";
-}
-function slidNext () {
-	if (currentSlider < sliderCount) {
-		sliderHide();
-		currentSlider ++;
-		sliderShow();
-	}
-}
-function slidePrevius () {
-	if (currentSlider > 0) {
-		sliderHide();
-		currentSlider --;
-		sliderShow();
-	}
-}
-function sliderJump(number) {
-	sliderHide();
-	currentSlider = number;
-	sliderShow();
-	resetTimer()
-}
-
-sliderPreviusButton.addEventListener("click", slidePrevius);
-sliderNextButton.addEventListener("click", slidNext);
-sliderShow()
-
-// Auto Play Codes (autoplay is Optional. you can remove the below code if you do not want Autoplay)
-function slideTimer () {
-	if (currentSlider < sliderCount) {
-		slidNext ()
-		window.setTimeout (slideTimer, timerlength) 
-	} else {
-		sliderJump(0)
-		window.setTimeout (slideTimer, timerlength) 
-	}
-}
-window.setTimeout (slideTimer, timerlength);
-function resetTimer () {	
+@media only screen and (max-width: 1100px) {
+  .slider{
+    width: 99%;
+    height: 40vw;
+  }  
 }
