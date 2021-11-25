@@ -48,13 +48,11 @@ function sliderJump(number) {
 	sliderHide();
 	currentSlider = number;
 	sliderShow();
-	resetTimer()
 }
 
 sliderPreviusButton.addEventListener("click", slidePrevius);
 sliderNextButton.addEventListener("click", slidNext);
 sliderShow()
-
 // Auto Play Codes (autoplay is Optional. you can remove the below code if you do not want Autoplay)
 function slideTimer () {
 	if (currentSlider < sliderCount) {
@@ -66,5 +64,3 @@ function slideTimer () {
 	}
 }
 window.setTimeout (slideTimer, timerlength);
-function resetTimer () {	
-}
