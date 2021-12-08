@@ -93,6 +93,14 @@ document.addEventListener('keydown', function(event) {
 			mykey = "/";
 			operator(mykey);
 			break;
+		case 57:
+			mykey = "(";
+			num(mykey);
+			break;
+		case 48:
+			mykey = ")";
+			num(mykey);
+			break;
 	}
 
 });
