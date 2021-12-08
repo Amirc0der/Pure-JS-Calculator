@@ -55,10 +55,12 @@ p {
 	padding: 0 15px 15px 15px;
 }
 #monitor {
+	width: 86.5%;
 	margin:5px 5px 10px 5px;
 	padding:9px;
 	border-radius: 5px;
 	height:20px;
 	background: #eee;
+	border: none;
 }
 
