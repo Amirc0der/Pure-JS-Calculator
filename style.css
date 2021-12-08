@@ -12,7 +12,7 @@ body {
 	color:#222;
 	font-family: sans-serif;
 	box-sizing: border-box;
-	border: 5px solid #ff5;
+	border: 5px solid #7BD3FF;
 }
 span {
 	user-select: none;
@@ -27,19 +27,17 @@ span {
 	cursor: pointer;
 }
 span:hover {
-	background: #ff5;
+	background: #7BD3FF;
 }
 span:last-child {
 	width: 42%;
 }
 .head {
-	user-select: none;
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
-	background: #ff5;
-	border-top-left-radius: 15px;
+	background: #7BD3FF;
 }
 p {
 	padding: 0px 10px 0px 10px;
@@ -63,4 +61,3 @@ p {
 	background: #eee;
 	border: none;
 }
-
