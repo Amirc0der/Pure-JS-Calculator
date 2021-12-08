@@ -2,6 +2,7 @@ body {
 	background:#eee;
 }
 .box {
+	user-select: none;
 	position: relative;
 	width:254px;
 	height: 340px;
@@ -15,7 +16,6 @@ body {
 	border: 5px solid #ff5;
 }
 span {
-	user-select: none;
 	text-align: center;
 	display: inline-block;
 	background: #eee;
