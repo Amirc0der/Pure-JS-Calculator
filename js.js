@@ -2,7 +2,6 @@ const input = document.getElementById('monitor');
 let fix = 0;
 var output = 0;
 var show = 0;
-var a = 0;
 var mm = 0;
 
 function monitor_update() {
@@ -16,7 +15,7 @@ function add_to_monitor() {
 function calculate() {
 	fix = input.innerHTML
 	fix = fix.replace("++", "+");
-	fix = fix.replace("--", "-");
+	fix = fix.replace("--", "+");
 	fix = fix.replace("**", "*");
 	fix = fix.replace("//", "/");
 	fix = fix.replace("..", ".");
@@ -26,13 +25,11 @@ function calculate() {
 }
 
 function num(x) {
+	if (input.innerHTML == "0") {
+		input.innerHTML = ""
+	} 
 	show = x;
-	if (a == 0) {
-		monitor_update();
-		a = 1;
-	} else {
-		add_to_monitor();
-	}
+	add_to_monitor();
 }
 
 function operator(y) {
@@ -40,14 +37,17 @@ function operator(y) {
 	add_to_monitor();
 }
 
+function paranthesis(y) {
+	if (input.innerHTML == "0") {
+		input.innerHTML = ""
+	} 
+	show = y;
+	add_to_monitor();
+}
+
 function mread() {
 	show = mm;
-	if (a == 0) {
-		monitor_update();
-		a = 1;
-	} else {
-		add_to_monitor();
-	}
+	add_to_monitor();
 }
 
 function mclean() {
@@ -65,13 +65,7 @@ function mminus() {
 }
 
 function clean() {
-	show = "0";
-	monitor_update();
-	a = 0;
-}
-
-function equal() {
-	calculate();
+	input.innerHTML = 0;
 }
 
 document.addEventListener('keydown', function(event) {
@@ -84,7 +78,7 @@ document.addEventListener('keydown', function(event) {
 		nummer = nummer.substring(0, nummer.length - 1);
 		input.innerHTML = nummer;
 	} else if (event.keyCode == 13) {
-		equal();
+		calculate();
 	}
 	switch (event.keyCode) {
 		case 110:

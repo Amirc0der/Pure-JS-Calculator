@@ -2,24 +2,35 @@ body {
 	background:#eee;
 }
 .box {
+	user-select: none;
 	position: relative;
-	width:244px;
-	height: 430px;
+	width:254px;
+	height: 340px;
 	background:#fff;
 	margin:10vw auto 10vw auto;
 	box-shadow:0 0 9px #ccc;
 	border-radius: 15px;
 	color:#222;
 	font-family: sans-serif;
+	box-sizing: border-box;
+	border: 5px solid #ff5;
 }
-button {
-	width:40px;
-	height:40px;
-	padding:5px;
+span {
+	text-align: center;
+	display: inline-block;
+	background: #eee;
+	width:36px;
+	height:20px;
+	padding:2px;
 	margin:5px;
+	border-radius: 10px;
+	cursor: pointer;
 }
-button:last-child {
-	width: 95%;
+span:hover {
+	background: #ff5;
+}
+span:last-child {
+	width: 42%;
 }
 .head {
 	position: absolute;
