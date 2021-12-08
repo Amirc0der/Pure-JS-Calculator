@@ -19,6 +19,7 @@ function calculate() {
 	fix = fix.replace("**", "*");
 	fix = fix.replace("//", "/");
 	fix = fix.replace("..", ".");
+	fix = fix.replace(")(", ")*(");
 	output = eval(fix);
 	input.innerHTML = output;
 	show = 0;
