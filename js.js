@@ -15,11 +15,11 @@ function add_to_monitor() {
 
 function calculate() {
 	fix = input.innerHTML
-  fix = fix.replace("++", "+");
-  fix = fix.replace("--", "-");
-  fix = fix.replace("**", "*");
-  fix = fix.replace("//", "/");
-  fix = fix.replace("..", ".");
+	fix = fix.replace("++", "+");
+	fix = fix.replace("--", "-");
+	fix = fix.replace("**", "*");
+	fix = fix.replace("//", "/");
+	fix = fix.replace("..", ".");
 	output = eval(fix);
 	input.innerHTML = output;
 	show = 0;
@@ -72,7 +72,6 @@ function clean() {
 
 function equal() {
 	calculate();
-	a = 0;
 }
 
 document.addEventListener('keydown', function(event) {
