@@ -37,14 +37,6 @@ function operator(y) {
 	add_to_monitor();
 }
 
-function paranthesis(y) {
-	if (input.innerHTML == "0") {
-		input.innerHTML = ""
-	} 
-	show = y;
-	add_to_monitor();
-}
-
 function mread() {
 	show = mm;
 	add_to_monitor();
