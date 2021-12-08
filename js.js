@@ -3,6 +3,7 @@ let fix = 0;
 var output = 0;
 var show = 0;
 var mm = 0;
+input.value= 0;
 
 function monitor_update() {
 	input.value = show;
@@ -14,11 +15,6 @@ function add_to_monitor() {
 
 function calculate() {
 	fix = input.value
-	fix = fix.replace("++", "+");
-	fix = fix.replace("--", "+");
-	fix = fix.replace("**", "*");
-	fix = fix.replace("//", "/");
-	fix = fix.replace("..", ".");
 	fix = fix.replace(")(", ")*(");
 	output = eval(fix);
 	input.value = output;
@@ -34,8 +30,10 @@ function num(x) {
 }
 
 function operator(y) {
-	show = y;
-	add_to_monitor();
+	if (input.value.charAt(input.value.length-1) != y) {
+		show = y;
+		add_to_monitor();
+	}
 }
 
 function mread() {
