@@ -1,0 +1,53 @@
+body {
+	background:#eee;
+}
+.box {
+	position: relative;
+	width:244px;
+	height: 430px;
+	background:#fff;
+	margin:10vw auto 10vw auto;
+	box-shadow:0 0 9px #ccc;
+	border-radius: 15px;
+	color:#222;
+	font-family: sans-serif;
+}
+button {
+	width:40px;
+	height:40px;
+	padding:5px;
+	margin:5px;
+}
+button:last-child {
+	width: 95%;
+}
+.head {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background: #ff5;
+	border-top-right-radius: 15px;
+	border-top-left-radius: 15px;
+}
+p {
+	padding: 0px 10px 0px 10px;
+	color: #fff;
+	text-shadow: 0 0 5px #999;
+	font-weight: bolder;
+}
+.body {
+	position: absolute;
+	top: 10px;
+	left: 0;
+	margin-top: 50px;
+	padding: 0 15px 15px 15px;
+}
+#monitor {
+	margin:5px 5px 10px 5px;
+	padding:9px;
+	border-radius: 5px;
+	height:20px;
+	background: #eee;
+}
+
