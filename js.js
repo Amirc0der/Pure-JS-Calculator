@@ -19,7 +19,7 @@ function num(x) {
 	}
 	input.value += x;
 }
-function operator(y) {										// doesn't let user to write two operators in a row
+function operator(y) {										// preventing user from writing two operators in a row
 	let opr = input.value.charAt(input.value.length - 1)
 	if (opr != "-" && opr != "*" && opr != "+" && opr != "/" && opr != ".") {
 		input.value += y;
@@ -42,7 +42,7 @@ function memoryinus() {
 function clean() {
 	input.value = 0;
 }
-/// Codes below adresses the key on the keyboard to the above functions
+									// Codes below adresses the key on the keyboard to the above functions
 document.addEventListener('keydown', function(event) {
 	if (event.keyCode > 95 && event.keyCode < 106) {						// numpad keys
 		let mykey = event.keyCode - 96;
