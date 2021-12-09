@@ -14,7 +14,10 @@ function add_to_monitor() {
 }
 
 function calculate() {
-	fix = input.value
+	fix = input.value;
+	for (i=0; i<10 ;i++) {
+    		fix = fix.replace(i+'(',i+'*(')
+ 	}
 	fix = fix.replace(")(", ")*(");
 	output = eval(fix);
 	input.value = output;
