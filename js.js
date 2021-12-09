@@ -30,7 +30,8 @@ function num(x) {
 }
 
 function operator(y) {
-	if (input.value.charAt(input.value.length-1) != y) {
+	let opr = input.value.charAt(input.value.length-1)
+	if (opr != "-" && opr != "*" && opr != "+" && opr != "/" && opr != ".") {
 		show = y;
 		add_to_monitor();
 	}
