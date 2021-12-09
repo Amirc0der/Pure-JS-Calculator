@@ -66,40 +66,34 @@ document.addEventListener('keydown', function(event) {
 		num(mykey);
 
 	} else if (event.keyCode == 8) {
-		nummer = input.value;
-		nummer = nummer.substring(0, nummer.length - 1);
-		input.value = nummer;
+		input.value = input.value.substring(0, input.value.length - 1);
 	} else if (event.keyCode == 13) {
 		calculate();
 	}
 	switch (event.keyCode) {
 		case 110:
-			mykey = ".";
-			operator(mykey);
+			operator(".");
 			break;
 		case 107:
-			mykey = "+";
-			operator(mykey);
+			operator("+");
 			break;
 		case 109:
-			mykey = "-";
-			operator(mykey);
+			operator("-");
 			break;
 		case 106:
-			mykey = "*";
-			operator(mykey);
+			operator("*");
 			break;
 		case 111:
-			mykey = "/";
-			operator(mykey);
+			operator("/");
 			break;
 		case 57:
-			mykey = "(";
-			num(mykey);
+			num("(");
 			break;
 		case 48:
-			mykey = ")";
-			num(mykey);
+			num(")");
+			break;
+		case 191:
+			operator("/");
 			break;
 	}
 
