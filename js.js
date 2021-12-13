@@ -6,9 +6,9 @@ input.value = 0;
 function calculate() {
 	fix = input.value
 	for (i = 0; i < 10; i++) {  						//fixing multipications like 2(4)
-		fix = fix.replace(i + '(', i + '*(')
+		fix = fix.replaceAll(i + '(', i + '*(')
 	}
-	fix = fix.replace(")(", ")*(");						// fixing multipilications like (4)(2)
+	fix = fix.replaceAll(")(", ")*(");						// fixing multipilications like (4)(2)
 	input.value = eval(fix);
 	return eval(fix);
 }
